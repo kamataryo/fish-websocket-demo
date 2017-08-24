@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack -p && $ browserify ./src/main.js -t babelify --outfile ./dist/bundle.js",
+    "build": "cross-env NODE_ENV=production webpack -p && browserify ./src/main.js -t babelify --outfile ./dist/bundle.js",
     "start": "webpack-dev-server --progress --colors --inline --watch",
     "test": "ls ./dist/bundle.js",
     "serve": "node server",
