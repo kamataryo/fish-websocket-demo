@@ -2,10 +2,10 @@ import $ from 'jquery'
 
 const actions = {}
 
-const url = __PROD__ ? 'ws://parot-websocket.biwako.io/echo' : 'ws://localhost:3001/echo'
+const host = __PROD__ ? 'parrot-ws.biwako.io' : 'localhost:3001'
 
 // setup WebSocket
-const connection = new WebSocket(url, ['soap'])
+const connection = new WebSocket(`ws://${host}/echo`, ['soap'])
 
 // exec
 connection.onmessage = e => {

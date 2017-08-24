@@ -15,40 +15,54 @@
       background-color: white;
       border: 1px solid gray;
       color: gray;
+      outline: none;
     }
     .button:hover {
       background-color: gray;
       color: white;
     }
-    .buttons .button-up {
-      top  : 100px;
+    .controller .button-up {
+      top  : 20px;
       left : 120px;
     }
-    .buttons .button-right {
-      top:  150px;
+    .controller .button-right {
+      top:  70px;
       left: 220px;
     }
-    .buttons .button-down {
-      top: 200px;
+    .controller .button-down {
+      top: 120px;
       left: 120px;
     }
-    .buttons .button-left {
-      top: 150px;
+    .controller .button-left {
+      top: 70px;
       left: 20px;
     }
     .fish-wrap {
       position: absolute;
     }
+    @media all and (min-width: 680px) {
+      .controller {
+        display: none;
+      }
+    }
+    @media all and (max-width: 680px) {
+      .fish-wrap {
+        display: none;
+      }
+    }
+
   </style>
 </head>
 <body>
-  <h1>コントローラー</h1>
-  <div class="buttons">
-    <button id="up"    class="button button-up">↑</button>
-    <button id="right" class="button button-right">→</button>
-    <button id="down"  class="button button-down">↓</button>
-    <button id="left"  class="button button-left">←</button>
+  <div class="controller-wrap">
+    <div class="controller">
+      <button id="up"    class="button button-up">↑</button>
+      <button id="right" class="button button-right">→</button>
+      <button id="down"  class="button button-down">↓</button>
+      <button id="left"  class="button button-left">←</button>
+    </div>
   </div>
+
   <div id="fish" class="fish-wrap">
     <?xml version="1.0" encoding="UTF-8"?>
     <svg width="165px" height="78px" viewBox="0 0 165 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

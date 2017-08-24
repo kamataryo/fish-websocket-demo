@@ -65,11 +65,6 @@ module.exports = {
       __VERSION__    : JSON.stringify(gitRevisionPlugin.version()),
       __COMMITHASH__ : JSON.stringify(gitRevisionPlugin.commithash()),
     }),
-
-    new CopyWebpackPlugin([
-      // { from: './assets',     to: path.join(__dirname, '/dist') },
-      // { from: '.bin/_rewdirects', to: path.join(__dirname, '/dist') },
-    ]),
   ],
 
   devServer: {

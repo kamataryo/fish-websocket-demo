@@ -23,7 +23,6 @@
   "homepage": "https://github.com/kamataryo/mermaid-websocket-demo#readme",
   "dependencies": {
     "jquery": "^3.2.1",
-    "jquery.ripples": "git+https://git@github.com/sirxemic/jquery.ripples.git",
     "ws": "^3.1.0"
   },
   "devDependencies": {

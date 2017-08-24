@@ -4,10 +4,14 @@ import 'jquery-mermaid-swim-plugins'
 
 const $fish = $('#fish')
 
-$('#up').click(()    => $fish.mermaidEmit('up'))//.mermaidSwimUp())
-$('#down').click(()  => $fish.mermaidEmit('down'))//.mermaidSwimDown())
-$('#right').click(() => $fish.mermaidEmit('right'))//.mermaidSwimRight())
-$('#left').click(()  => $fish.mermaidEmit('left'))//.mermaidSwimLeft())
+$('.button').click(function() {
+  $(this).fadeOut(50).fadeIn(10)
+})
+
+$('#up').click(()    => $fish.mermaidEmit('up'))
+$('#down').click(()  => $fish.mermaidEmit('down'))
+$('#right').click(() => $fish.mermaidEmit('right'))
+$('#left').click(()  => $fish.mermaidEmit('left'))
 
 $fish
   .onMermaidRecieve('up',    function(){ this.mermaidSwimUp() })

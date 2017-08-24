@@ -1,15 +1,8 @@
 import $ from 'jquery'
-import 'jquery.ripples'
-
-$('body').ripples({
-    resolution: 512,
-    dropRadius: 20,
-    perturbance: 0.04,
-})
 
 $.fn.mermaidSwimUp = function() {
   return this
-    .animate({ top: this.offset().top - 200 })
+    .animate({ top: this.offset().top - 200 }, 300)
     .css({
       transform:'rotate(-90deg)',
       transitionDuration: '1s',
@@ -18,7 +11,7 @@ $.fn.mermaidSwimUp = function() {
 
 $.fn.mermaidSwimDown = function() {
   return this
-    .animate({ top: this.offset().top + 200 })
+    .animate({ top: this.offset().top + 200 }, 300)
     .css({
       transform:'rotate(90deg)',
       transitionDuration: '1s',
@@ -27,7 +20,7 @@ $.fn.mermaidSwimDown = function() {
 
 $.fn.mermaidSwimRight = function() {
   return this
-    .animate({ left: this.offset().left + 200 })
+    .animate({ left: this.offset().left + 200 }, 300)
     .css({
       transform:'rotate(0deg)',
       transitionDuration: '1s',
@@ -36,7 +29,7 @@ $.fn.mermaidSwimRight = function() {
 
 $.fn.mermaidSwimLeft = function() {
   return this
-    .animate({ left: this.offset().left - 200 })
+    .animate({ left: this.offset().left - 200 }, 300)
     .css({
       transform:'rotate(180deg)',
       transitionDuration: '1s',
