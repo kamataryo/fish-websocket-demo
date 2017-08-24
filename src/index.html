@@ -11,6 +11,14 @@
       width     : 50px;
       height    : 50px;
       font-size : 30px;
+      border-radius: 25px;
+      background-color: white;
+      border: 1px solid gray;
+      color: gray;
+    }
+    .button:hover {
+      background-color: gray;
+      color: white;
     }
     .buttons .button-up {
       top  : 100px;
@@ -28,15 +36,40 @@
       top: 150px;
       left: 20px;
     }
+    .fish-wrap {
+      position: absolute;
+    }
   </style>
 </head>
 <body>
   <h1>コントローラー</h1>
   <div class="buttons">
-    <button class="button button-up">↑</button>
-    <button class="button button-right">→</button>
-    <button class="button button-down">↓</button>
-    <button class="button button-left">←</button>
+    <button id="up"    class="button button-up">↑</button>
+    <button id="right" class="button button-right">→</button>
+    <button id="down"  class="button button-down">↓</button>
+    <button id="left"  class="button button-left">←</button>
+  </div>
+  <div id="fish" class="fish-wrap">
+    <?xml version="1.0" encoding="UTF-8"?>
+    <svg width="165px" height="78px" viewBox="0 0 165 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>Combined Shape</title>
+        <desc>Created with Sketch.</desc>
+        <defs>
+            <path d="M45.4790872,31.8405369 C48.2457327,25.4616368 54.5977436,21 61.9985515,21 L127.001448,21 C136.941774,21 145,29.0566887 145,39 C145,48.9411255 136.947924,57 127.001448,57 L61.9985515,57 C54.9449848,57 48.839092,52.9432996 45.8875599,47.0344204 L21.5,54.5 L21.5,24.5 L45.4790872,31.8405369 Z" id="path-1"></path>
+            <filter x="-25.5%" y="-87.5%" width="151.0%" height="275.0%" filterUnits="objectBoundingBox" id="filter-2">
+                <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+                <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+                <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.298545063 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+            </filter>
+        </defs>
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Combined-Shape">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#7FF5EB" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </svg>
   </div>
 </body>
 </html>

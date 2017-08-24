@@ -68,7 +68,7 @@ module.exports = {
 
     new CopyWebpackPlugin([
       // { from: './assets',     to: path.join(__dirname, '/dist') },
-      { from: '.bin/_redirects', to: path.join(__dirname, '/dist') },
+      // { from: '.bin/_rewdirects', to: path.join(__dirname, '/dist') },
     ]),
   ],
 
