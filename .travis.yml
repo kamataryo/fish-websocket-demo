@@ -1,0 +1,24 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - '8'
+
+before_script:
+  - npm run build
+
+script:
+  - npm run lint
+  - npm test
+
+after_success:
+  - openssl aes-256-cbc -K $encrypted_0e70068955a5_key -iv $encrypted_0e70068955a5_iv -in .travis_rsa.enc -out $HOME/.ssh/id_rsa -d
+  - chmod 600 $HOME/.ssh/id_rsa
+  - .bin/travis-deploy.sh
+
+notifications:
+  slack:
+    secure: krPzJF2I66igPWIHJuC1tmrpnlT2lpkE0Z4R7O6DgU0ApXofjduX/lnuqJIoaTJMTniAjeATO4S55RDEujtxVoeUHhGHcHD2FrH6xZSdLOoVDa58HAxplszAPniVMaWBXuSsp218yTpsdNeWpzIC9zrh/95YRU53odk9qAopgQ44QLqR9defcXjjCMzFsNnbjloxM1PIhOofDgl+UVBNlIyxj+NYady2RZ0NSYu0lfGa7SID6rrnxf4P5mHHcNPIE/bxWe4xCH6n2F9B3bGYjTsaIu6y49E8r8t+SRqYJOZLqqWdU/xiCJHtl8fdCtasUyCtKgUdnVgLds4Th8FovWhSr6d4OoFSJ87UkFam5tgXBLaAbLJhgsG5u9FV8mxjqj5OXWZbPrgXV+D90oQ+qNY6cYDTFO1HIKRqAKpSFHEDgWzCX6ylwNpv2KPOPq6xaZtuxKHIi9cj7mrBRKcyYj7XT2WyWHPvtBbpLsIRkaAMbUfy1Ff8jQ9geYAluaWe35HZWBGOM0jaOp18DvTgIhPQXtqqz3vujSUgSUNFUZ/+CFiXUGoHppE5CJwh8DduMIYwz9Arh0h1FJVZ2+AZCxiWarxrx4yM6/RX4B738Dl4gioasEoQnSoRNLz9VfLk2sckJaapsSd64DfrmG/GZLvgGjT6YRiomfADLl2130Y=
+  webhooks:
+    secure: z0qn8BECABa1EFNouRM2m2BEh0V/6RDVy0nXsjgFXLCchPUnRfMgTJsNYIsDeSywk8Bd9iKt/QCsZckzywOSr+mnZBMHDHzezBrVnJgNRm2YdXWEHfuUjEg25j770JG6XRXprdqPlSWoDxDzCQSYTkHmNrmku1VpTVGgd6DFWXZ8IpoplRN2F60n4TJLbORqWo8C/gpn60FGbWoiYmD9mbgT7vikWWeL2V4hZZNoTIpKmCxiVbQAJG/922v5CqlSPRCPfgx2aI3fjtqbRYrkJUlyHM2LOQZn0jLbFfCOKf1GA0uZOAusGUOwHSR5RzHObUsl5DRqplSs0GCHTONe6J8YLAYQSQj3zP6sR56eOCvd381S0soeGzPgiKxus02vvUdqBDXnEXajrgTmTbR/qTYm7HsFsr9WXZON7Uqrk/fU8sz0UTjaJLA5x8ruHDl7WtNFrcE1aEwZ/CbvLrIDZ0vLpx/2Fd0S25noXC5zRzA0hdh7O9xKG/dKUiG0hO38Uiw/2IJRBH3x9lE7s2KGr+EdZEO+sXtAiy2St3v1toVMwExXuLf7msw/9drvnNDPAntVus/rN1aG4be5y6dKOV69MokWn3mQZyek7EjREgZgtgWmBALI3teqG7yUs6ESzlo7m4qMFJVa9tfplUTaT79t/Byx2251bWcHUdFqH8U=
