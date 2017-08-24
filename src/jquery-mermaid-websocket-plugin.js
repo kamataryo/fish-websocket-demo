@@ -2,7 +2,13 @@ import $ from 'jquery'
 
 const actions = {}
 
-const host = __PROD__ ? 'parrot-ws.biwako.io' : 'localhost:3001'
+let host
+if (window && window.__PROD__) {
+  host = __PROD__ ? 'parrot-ws.biwako.io' : 'localhost:3001'
+} else {
+  host = 'parrot-ws.biwako.io'
+}
+
 console.log(host)
 
 // setup WebSocket
