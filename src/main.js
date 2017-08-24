@@ -8,10 +8,10 @@ $('.button').click(function() {
   $(this).fadeOut(50).fadeIn(10)
 })
 
-$('#up').click(()    => $fish.mermaidEmit('up'))
-$('#down').click(()  => $fish.mermaidEmit('down'))
-$('#right').click(() => $fish.mermaidEmit('right'))
-$('#left').click(()  => $fish.mermaidEmit('left'))
+$('#up').click(function() {    $fish.mermaidEmit('up') })
+$('#down').click(function() {  $fish.mermaidEmit('down') })
+$('#right').click(function() { $fish.mermaidEmit('right') })
+$('#left').click(function() {  $fish.mermaidEmit('left') })
 
 $fish
   .onMermaidRecieve('up',    function(){ this.mermaidSwimUp() })

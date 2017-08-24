@@ -62,6 +62,7 @@ module.exports = {
 
     new webpack.DefinePlugin({
       __PROD__       : process.env.NODE_ENV === 'production',
+      __WS_HOST__    : process.env.NODE_ENV === 'production' ? 'parrot-ws.biwako.io' : 'localhost:3001',
       __VERSION__    : JSON.stringify(gitRevisionPlugin.version()),
       __COMMITHASH__ : JSON.stringify(gitRevisionPlugin.commithash()),
     }),
