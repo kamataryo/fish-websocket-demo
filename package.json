@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack -p",
+    "build": "cross-env NODE_ENV=production webpack -p && $ browserify ./src/main.js -t babelify --outfile ./dist/bundle.js",
     "start": "webpack-dev-server --progress --colors --inline --watch",
     "test": "ls ./dist/bundle.js",
     "serve": "node server",
@@ -23,13 +23,20 @@
   "homepage": "https://github.com/kamataryo/mermaid-websocket-demo#readme",
   "dependencies": {
     "jquery": "^3.2.1",
+    "websocket": "^1.0.24",
     "ws": "^3.1.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.5",
     "git-revision-webpack-plugin": "^2.5.1",
+    "gulp": "^3.9.1",
     "html-webpack-plugin": "^2.30.1",
     "style-loader": "^0.18.2",
     "stylus": "^0.54.5",

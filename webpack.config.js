@@ -22,7 +22,7 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, '/dist'),
-    publicPath: './',
+    publicPath: '/',
     filename: 'bundle.js'
   },
 
@@ -38,6 +38,10 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /.js$/,
+        use: [{ loader: 'babel-loader?compact=false' }],
+      },
       {
         test: /\.styl$/,
         loader: 'style-loader!css-loader!stylus-loader',

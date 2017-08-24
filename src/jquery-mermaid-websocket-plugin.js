@@ -2,26 +2,23 @@ import $ from 'jquery'
 
 const actions = {}
 
-const url = __PROD__ ? 'ws://parrot-ws.biwako.io/echo' : 'ws://localhost:3001/echo'
-console.log(url)
+const host = __PROD__ ? 'parrot-ws.biwako.io' : 'localhost:3001'
+console.log(host)
+
 // setup WebSocket
-const ws = new WebSocket(url, ['soap'])
+const ws = new WebSocket(`ws://${host}/echo`)
+
+ws.onopen = e => console.log(e)
 
 // set handler when on message
-ws.onmessage = function(e) {
+ws.onmessage = e => {
   const actionKey = JSON.parse(e.data).mermaidMessage
   if (actionKey && typeof actions[actionKey] === 'function') {
     actions[actionKey]()
   }
 }
 
-// ws.onclose = function(e) {
-//   console.log(e)
-// }
-//
-// ws.onerror = function(e) {
-//   console.log(e)
-// }
+ws.onclose = e => console.log(e)
 
 $.fn.mermaidEmit = function(message) {
   const payload = { mermaidMessage: message }
