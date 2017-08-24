@@ -8,7 +8,7 @@ if [ $TRAVIS_BRANCH != "master" ]; then
 fi
 
 # Add necessary files for gh-pages hosting
-
+mv ./.bin/CNAME ./dist
 cd dist
 
 git init
