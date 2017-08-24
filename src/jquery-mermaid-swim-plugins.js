@@ -1,4 +1,11 @@
 import $ from 'jquery'
+import 'jquery.ripples'
+
+$('body').ripples({
+    resolution: 512,
+    dropRadius: 20,
+    perturbance: 0.04,
+})
 
 $.fn.mermaidSwimUp = function() {
   return this
