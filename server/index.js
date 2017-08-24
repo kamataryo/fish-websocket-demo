@@ -8,6 +8,7 @@ const wss = new WebSocket.Server({
 })
 
 wss.on('connection', socket => {
+  console.log('connected!')
   sockets.push(socket)
   socket.on('message', message => {
     sockets.forEach(socket => {
@@ -18,4 +19,6 @@ wss.on('connection', socket => {
       }
     })
   })
+  socket.on('close', arg => console.log(arg))
+  socket.on('error', arg => console.log(arg))
 })
