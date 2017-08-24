@@ -4,9 +4,6 @@ node_js:
 - '8'
 before_script:
 - npm run build
-script:
-- npm run lint
-- npm test
 after_success:
 - openssl aes-256-cbc -K $encrypted_058583f327f3_key -iv $encrypted_058583f327f3_iv
   -in .travis_rsa.enc -out $HOME/.ssh/id_rsa -d
