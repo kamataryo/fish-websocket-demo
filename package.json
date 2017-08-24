@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack -p",
     "start": "webpack-dev-server --progress --colors --inline --watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ls ./dist/bundle.js",
     "serve": "node server",
     "__deploykey_gen": "ssh-keygen -t rsa -b 4096 -C \"$(git config user.email)\" -f ./.travis_rsa -N ''",
     "__encrypt_deploykey": "travis encrypt-file ./.travis_rsa --add"
