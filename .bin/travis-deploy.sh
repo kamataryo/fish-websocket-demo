@@ -14,7 +14,7 @@ cd dist
 git init
 git config user.name 'kamataryo@travis'
 git config user.email "kamataryo@users.noreply.github.com"
-git remote add origin git@github.com:kamataryo/mermaid-websocket-demo.git
+git remote add origin git@github.com:kamataryo/fish-websocket-demo.git
 
 git checkout -b gh-pages
 git add .

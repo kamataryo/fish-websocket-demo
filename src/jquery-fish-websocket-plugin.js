@@ -18,7 +18,7 @@ ws.onopen = e => console.log(e)
 
 // set handler when on message
 ws.onmessage = e => {
-  const actionKey = JSON.parse(e.data).mermaidMessage
+  const actionKey = JSON.parse(e.data).fishMessage
   if (actionKey && typeof actions[actionKey] === 'function') {
     actions[actionKey]()
   }
@@ -26,13 +26,13 @@ ws.onmessage = e => {
 
 ws.onclose = e => console.log(e)
 
-$.fn.mermaidEmit = function(message) {
-  const payload = { mermaidMessage: message }
+$.fn.fishEmit = function(message) {
+  const payload = { fishMessage: message }
   ws.send(JSON.stringify(payload))
   return this
 }
 
-$.fn.onMermaidRecieve = function (slug, callback) {
+$.fn.onFishRecieve = function (slug, callback) {
   // register callbacks
   actions[slug] = callback.bind(this)
   return this

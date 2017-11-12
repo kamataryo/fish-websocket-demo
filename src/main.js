@@ -1,6 +1,6 @@
 import $ from 'jquery'
-import './jquery-mermaid-websocket-plugin'
-import './jquery-mermaid-swim-plugin'
+import './jquery-fish-websocket-plugin'
+import './jquery-fish-swim-plugin'
 
 const $fish = $('#fish')
 
@@ -8,16 +8,16 @@ $('.button').click(function() {
   $(this).fadeOut(50).fadeIn(10)
 })
 
-$('#up').click(() => $fish.mermaidEmit('up'))
-$('#down').click(() => $fish.mermaidEmit('down'))
-$('#right').click(() => $fish.mermaidEmit('right'))
-$('#left').click(() => $fish.mermaidEmit('left'))
+$('#up').click(() => $fish.fishEmit('up'))
+$('#down').click(() => $fish.fishEmit('down'))
+$('#right').click(() => $fish.fishEmit('right'))
+$('#left').click(() => $fish.fishEmit('left'))
 
 $fish
-  .onMermaidRecieve('up',    function(){ this.mermaidSwimUp() })
-  .onMermaidRecieve('down',  function(){ this.mermaidSwimDown() })
-  .onMermaidRecieve('right', function(){ this.mermaidSwimRight() })
-  .onMermaidRecieve('left',  function(){ this.mermaidSwimLeft() })
+  .onFishRecieve('up',    function(){ this.fishSwimUp() })
+  .onFishRecieve('down',  function(){ this.fishSwimDown() })
+  .onFishRecieve('right', function(){ this.fishSwimRight() })
+  .onFishRecieve('left',  function(){ this.fishSwimLeft() })
 
 
 module.hot && module.hot.accept()
